@@ -3,63 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works | Orbit Brew</title>
+  <title>Flight Manual | Orbit Brew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Caprasimo&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a class="logo" href="index.html">Orbit<span>Brew</span></a>
-    <div class="links">
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Orbit <span>Brew</span></a>
+    <nav aria-label="Main">
       <a href="index.html">Home</a>
       <a href="#plans">Plans</a>
       <a href="#mission">Our Mission</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div class="page-head">
-    <h1>How Orbit Brew Works</h1>
-    <p class="sub">What the subscription is, how it works, and why we built it.</p>
+  <div class="manual-head">
+    <div class="mini-patch" aria-hidden="true">Flight<br>manual</div>
+    <div>
+      <h1>How Orbit Brew works</h1>
+      <p>What the subscription is, how a delivery works, and why we built it.</p>
+    </div>
   </div>
 
-  <section class="two-col">
-    <div>
-      <h2>The idea</h2>
+  <section class="chapter" id="idea">
+    <header><div class="num">1</div><h2>The idea</h2></header>
+    <div class="body">
       <p>Orbit Brew started with a simple problem: good cold brew is expensive at a café and slow to make at home. A single café cold brew can cost five or six dollars, and making it yourself takes a full day of steeping and a lot of cleanup. Orbit Brew solves both problems with a subscription that delivers fresh cold brew concentrate straight to your door.</p>
-      <p>We steep specialty-grade beans in cold, filtered water for 18 hours, then filter and bottle the concentrate the same day. Each 32 oz glass bottle makes about eight drinks, which works out to roughly $1.50 a cup. That is much less than a café cold brew.</p>
+      <p>We steep specialty-grade beans in cold, filtered water for 18 hours, then filter and bottle the concentrate the same day.</p>
+      <div class="facts">
+        <div><b>18 hr</b><span>steep time for every batch</span></div>
+        <div><b>8</b><span>drinks per 32 oz bottle</span></div>
+        <div><b>$1.50</b><span>about what each cup costs, compared with $5–6 at a café</span></div>
+      </div>
     </div>
-    <div>
-      <h2>Getting started</h2>
-      <ol class="steps">
-        <li><strong>Find your blend.</strong> Take the Blend Finder quiz on our home page or ask Orbi, our barista chatbot, for a recommendation.</li>
-        <li><strong>Choose your orbit.</strong> Pick a delivery every two or four weeks. Pause, skip or cancel whenever you like.</li>
-        <li><strong>Mix and enjoy.</strong> Combine one part concentrate with two parts water, milk or tonic. Unopened bottles stay fresh for three weeks in the fridge.</li>
-        <li><strong>Close the loop.</strong> Mail your empty bottles back in the prepaid sleeve and get a $2 credit for each one. We sanitize and reuse every bottle.</li>
+  </section>
+
+  <section class="chapter" id="steps">
+    <header><div class="num">2</div><h2>Getting started</h2></header>
+    <div class="body">
+      <ol class="timeline">
+        <li data-step="1"><h3>Find your blend</h3><p>Take the Mission Selector on our home page, or ask Orbi, our chatbot, for a recommendation.</p></li>
+        <li data-step="2"><h3>Choose your orbit</h3><p>Pick a delivery every two or four weeks. Pause, skip or cancel whenever you like.</p></li>
+        <li data-step="3"><h3>Mix and drink</h3><p>Combine one part concentrate with two parts water, milk or tonic. Unopened bottles stay fresh for three weeks in the fridge.</p></li>
+        <li data-step="4"><h3>Send the bottles back</h3><p>Mail your empty bottles back in the prepaid sleeve that comes with every delivery and get a $2 credit for each one. We sanitize and reuse every bottle.</p></li>
       </ol>
     </div>
   </section>
 
-  <section id="plans">
-    <h2>Plans</h2>
-    <p class="sub">Shipping is always free.</p>
-    <table>
-      <tr><th>Plan</th><th>Bottles per delivery</th><th>Price per delivery</th><th>Best for</th></tr>
-      <tr><td>Single Orbit</td><td>2</td><td>$24</td><td>One coffee drinker</td></tr>
-      <tr><td>Double Orbit</td><td>4</td><td>$42</td><td>Couples, roommates and small offices</td></tr>
-    </table>
+  <section class="chapter" id="plans">
+    <header><div class="num">3</div><h2>Plans</h2></header>
+    <div class="body">
+      <div class="price-tickets">
+        <div class="price-ticket">
+          <h3>Single Orbit</h3>
+          <div class="price">$24<small>per delivery</small></div>
+          <p>2 bottles. Good for one coffee drinker.</p>
+        </div>
+        <div class="price-ticket">
+          <h3>Double Orbit</h3>
+          <div class="price">$42<small>per delivery</small></div>
+          <p>4 bottles. For couples, roommates and small offices.</p>
+        </div>
+      </div>
+      <p class="plans-note">Shipping is always free.</p>
+    </div>
   </section>
 
-  <section id="mission">
-    <h2>Our mission</h2>
-    <p>Most bottled coffee ends up as single-use plastic. Orbit Brew uses only returnable glass bottles, and our goal is for every bottle to make at least ten trips before it is recycled. We buy our beans from importers who publish what they pay farmers, and we roast in small batches so that every delivery tastes fresh.</p>
-    <p>Our target customers are busy students and young professionals who want café-quality coffee at home without the cost or the waste. Over time we plan to add seasonal limited blends and office plans for teams.</p>
-    <p style="margin-top:40px"><a class="btn" href="index.html">← Back to Home</a></p>
+  <section class="chapter" id="mission">
+    <header><div class="num">4</div><h2>Our mission</h2></header>
+    <div class="body">
+      <p>Most bottled coffee ends up as single-use plastic. Orbit Brew uses only returnable glass bottles, and our goal is for every bottle to make at least ten trips before it is recycled. We buy our beans from importers who publish what they pay farmers, and we roast in small batches so that every delivery tastes fresh.</p>
+      <p>Our target customers are busy students and young professionals who want café-quality coffee at home without the cost or the waste. Over time we plan to add seasonal limited blends and office plans for teams.</p>
+      <p style="margin-top:30px"><a class="btn" href="index.html">Back to home</a></p>
+    </div>
   </section>
 
-  <footer class="feature-note">
-    <p>Have a question? <a href="#" data-open-chat>Chat with Orbi</a>, our chatbot.</p>
-    <p>Orbit Brew is a fictional business created for a class project.</p>
+  <footer class="site-foot">
+    <div>
+      <strong>Questions?</strong>
+      <p><a href="#" data-open-chat>Chat with Orbi</a>, our chatbot. It can help you pick a blend or explain the plans.</p>
+    </div>
+    <div class="small">
+      <p>Orbit Brew is a fictional business created for a class project.</p>
+    </div>
   </footer>
 
   <script src="site.js"></script>

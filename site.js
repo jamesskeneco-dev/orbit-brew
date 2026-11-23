@@ -5,7 +5,7 @@
   const btn = document.createElement('button');
   btn.id = 'chat-toggle';
   btn.setAttribute('aria-label', 'Open the Orbit Brew chatbot');
-  btn.innerHTML = '<span aria-hidden="true">☕</span> Chat with Orbi';
+  btn.innerHTML = '<span class="dot" aria-hidden="true"></span> Chat with Orbi';
   const win = document.createElement('div');
   win.id = 'chat-window';
   document.body.append(win, btn);
@@ -19,7 +19,7 @@
       win.appendChild(f);
     }
     const open = win.classList.toggle('open', forceOpen === true ? true : undefined);
-    btn.innerHTML = open ? '✕ Close chat' : '<span aria-hidden="true">☕</span> Chat with Orbi';
+    btn.innerHTML = open ? 'Close chat' : '<span class="dot" aria-hidden="true"></span> Chat with Orbi';
     btn.setAttribute('aria-label', open ? 'Close the chatbot' : 'Open the Orbit Brew chatbot');
   }
   btn.addEventListener('click', () => toggle());
@@ -28,7 +28,7 @@
   window.openOrbitChat = () => toggle(true);
 })();
 
-// Blend Finder (the landing page's extra feature)
+// Mission Selector (the landing page's extra feature). Scoring unchanged from v1.
 (function blendFinder() {
   const box = document.getElementById('quiz');
   if (!box) return;
@@ -50,7 +50,6 @@
   let score = {};
 
   function render() {
-    const pct = (step / questions.length) * 100;
 
     if (step === questions.length) {
       // Highest score wins; ties go to the most recent answer.
@@ -58,16 +57,18 @@
       const best = Object.keys(score).sort((a, b) => score[b] - score[a] || (b === last) - (a === last))[0];
       const b = blends[best];
       box.innerHTML = `
-        <div class="progress"><div style="width:100%"></div></div>
-        <div class="result">
-          <p class="label">Your match</p>
-          <h3 style="color:${b.color}">${b.name}</h3>
-          <p>${b.note}</p>
-          <p class="how">${b.how}</p>
-          <div class="actions" style="justify-content:center;display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
-            <button class="btn" id="again">Start over</button>
-            <button class="btn ghost" id="ask">Ask Orbi about ${b.name}</button>
+        <div class="ticket">
+          <div>
+            <p class="label">Your blend</p>
+            <h3>${b.name}</h3>
+            <p>${b.note}</p>
+            <p class="how">${b.how}</p>
+            <div class="actions">
+              <button class="btn" id="ask">Ask Orbi about ${b.name}</button>
+              <button class="btn plain" id="again">Start over</button>
+            </div>
           </div>
+          <div class="stamp" aria-hidden="true"><div>Mission<br>assigned<small>${b.name}</small></div></div>
         </div>`;
       document.getElementById('again').onclick = () => { step = 0; score = {}; render(); };
       document.getElementById('ask').onclick = () => window.openOrbitChat && window.openOrbitChat();
@@ -75,9 +76,12 @@
     }
 
     const cur = questions[step];
+    const planets = questions.map((_, i) => `<span class="${i < step ? 'done' : ''}"></span>`).join('<b></b>');
     box.innerHTML = `
-      <div class="progress"><div style="width:${pct}%"></div></div>
-      <p class="sub">Question ${step + 1} of ${questions.length}</p>
+      <div class="selector-top">
+        <span class="step wide">Question ${step + 1} of ${questions.length}</span>
+        <span class="planets" aria-hidden="true">${planets}</span>
+      </div>
       <h3>${cur.q}</h3>
       <div class="options">${cur.a.map(([text, key]) => `<button data-k="${key}">${text}</button>`).join('')}</div>`;
     box.querySelectorAll('.options button').forEach(btn => btn.onclick = () => {
