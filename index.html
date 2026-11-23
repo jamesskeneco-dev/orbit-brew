@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit Brew | Cold Brew Subscription</title>
+  <meta name="description" content="Orbit Brew is a cold brew concentrate subscription delivered every two or four weeks in returnable glass bottles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">Orbit<span>Brew</span></a>
+    <div class="links">
+      <a href="#blends">Blends</a>
+      <a href="#finder">Blend Finder</a>
+      <a href="about.html">How It Works</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Cold brew concentrate, <em>delivered every few weeks.</em></h1>
+      <p>We steep each batch for 18 hours, bottle it in returnable glass, and ship it to your door every two or four weeks.</p>
+      <div class="actions">
+        <a class="btn" href="about.html">How It Works →</a>
+        <a class="btn ghost" href="#finder">Find My Blend</a>
+      </div>
+    </div>
+    <div class="video-wrap">
+      <video src="orbit-brew.mp4" autoplay muted loop playsinline preload="auto"
+             aria-label="AI-generated clip of cold brew and cream being poured over ice"></video>
+    </div>
+  </header>
+
+  <section id="blends">
+    <h2>The four blends</h2>
+    <p class="sub">Each 32 oz bottle of concentrate makes about eight drinks.</p>
+    <div class="cards">
+      <div class="card"><h3><span class="dot" style="background:#6b3e26"></span>Launchpad</h3><p>Dark roast with chocolate notes.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#d9a066"></span>Moonbeam</h3><p>Medium roast with caramel and vanilla notes.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#b84a6b"></span>Nebula</h3><p>Light roast with berry and citrus notes.</p></div>
+      <div class="card"><h3><span class="dot" style="background:#7aa6c2"></span>Zero-G</h3><p>Swiss Water decaf with a nutty finish.</p></div>
+    </div>
+  </section>
+
+  <section id="finder">
+    <h2>Blend Finder</h2>
+    <p class="sub">Not sure which one to try? Answer three questions.</p>
+    <div class="quiz" id="quiz"></div>
+  </section>
+
+  <footer class="feature-note">
+    <p><strong>X-Factor: Blend Finder.</strong> This short quiz scores three answers and recommends one of the four blends, along with a suggested way to drink it. A button on the result opens the chatbot so visitors can ask follow-up questions about their match.</p>
+    <p>Orbit Brew is a fictional business created for a class project. Video generated with Google Gemini.</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
