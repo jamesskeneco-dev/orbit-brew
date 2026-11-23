@@ -107,17 +107,14 @@ th { color: var(--amber); }
 
 /* chatbot bubble */
 #chat-toggle {
-  position: fixed; right: 24px; bottom: 24px; z-index: 50; width: 64px; height: 64px;
-  border-radius: 50%; border: none; background: var(--amber); font-size: 28px; cursor: pointer;
+  position: fixed; right: 20px; bottom: 20px; z-index: 50; height: 54px; padding: 0 22px;
+  border-radius: 999px; border: none; background: var(--amber); color: var(--navy);
+  font: 700 1rem "Inter", system-ui, sans-serif; cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .45);
 }
-#chat-label {
-  position: fixed; right: 98px; bottom: 40px; z-index: 50; background: var(--cream); color: var(--navy);
-  padding: 8px 14px; border-radius: 12px; font-weight: 600; font-size: .9rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
-}
+#chat-toggle:hover { background: #f7b860; }
 #chat-window {
-  position: fixed; right: 24px; bottom: 100px; z-index: 50; width: 380px; height: 560px;
+  position: fixed; right: 24px; bottom: 86px; z-index: 50; width: 380px; height: 560px;
   max-width: calc(100vw - 48px); max-height: calc(100vh - 130px);
   border-radius: 18px; overflow: hidden; background: #fff; display: none;
   box-shadow: 0 20px 60px rgba(0, 0, 0, .55);
@@ -128,7 +125,6 @@ th { color: var(--amber); }
 @media (max-width: 820px) {
   .hero, .two-col { grid-template-columns: 1fr; }
   nav .links a { margin-left: 12px; }
-  #chat-label { display: none; }
 }
 
 @media (max-width: 520px) {

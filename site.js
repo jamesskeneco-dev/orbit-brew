@@ -5,13 +5,10 @@
   const btn = document.createElement('button');
   btn.id = 'chat-toggle';
   btn.setAttribute('aria-label', 'Open the Orbit Brew chatbot');
-  btn.textContent = '☕';
-  const label = document.createElement('div');
-  label.id = 'chat-label';
-  label.textContent = 'Questions? Chat with Orbi';
+  btn.innerHTML = '<span aria-hidden="true">☕</span> Chat with Orbi';
   const win = document.createElement('div');
   win.id = 'chat-window';
-  document.body.append(win, label, btn);
+  document.body.append(win, btn);
 
   function toggle(forceOpen) {
     if (!win.firstChild) {
@@ -22,9 +19,8 @@
       win.appendChild(f);
     }
     const open = win.classList.toggle('open', forceOpen === true ? true : undefined);
-    btn.textContent = open ? '✕' : '☕';
+    btn.innerHTML = open ? '✕ Close chat' : '<span aria-hidden="true">☕</span> Chat with Orbi';
     btn.setAttribute('aria-label', open ? 'Close the chatbot' : 'Open the Orbit Brew chatbot');
-    label.style.display = 'none';
   }
   btn.addEventListener('click', () => toggle());
   document.querySelectorAll('[data-open-chat]').forEach(el =>
